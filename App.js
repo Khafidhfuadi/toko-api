@@ -5,6 +5,7 @@ const app = express();
 app.use(express.json());
 
 const authRoutes = require("./routes/auth");
+const tokoRoutes = require("./routes/toko");
 const db = require("./config/db-config");
 const User = require("./models/user");
 const Toko = require("./models/toko");
@@ -21,6 +22,7 @@ db.sync({ force: false })
   });
 
 app.use("/api/auth", authRoutes);
+app.use("/api/", tokoRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
