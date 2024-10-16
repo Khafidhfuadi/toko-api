@@ -11,7 +11,6 @@ module.exports = async (req, res, next) => {
 
   try {
     const verified = jwt.verify(token, process.env.JWT_SECRET);
-    console.log("Token verified:", verified);
 
     req.user = await User.findByPk(verified.id);
 

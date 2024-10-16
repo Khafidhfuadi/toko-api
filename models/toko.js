@@ -4,7 +4,7 @@ const db = require("../config/db-config");
 const Toko = db.define(
   "toko",
   {
-    toko_id: {
+    id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
       allowNull: false,
